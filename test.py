@@ -1,4 +1,8 @@
 import nltk
-caesar = nltk.corpus.gutenberg.words('shakespeare-caesar.txt')
-hamlet = nltk.corpus.gutenberg.raw('shakespeare-hamlet.txt')
-print(hamlet[:400])
+from nltk.corpus import PlaintextCorpusReader
+corpus_root = "C:/Users/fbpea/Git_Repositories/Shakespeare_NLPandML/ShakespeareCorpus"
+plays = PlaintextCorpusReader(corpus_root, '.*.txt')
+
+asYouLikeIt = plays.words('AsYouLikeIt.txt')
+
+print(asYouLikeIt[0:20])
