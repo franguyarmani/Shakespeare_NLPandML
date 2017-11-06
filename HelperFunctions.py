@@ -1,15 +1,20 @@
 from nltk.tokenize import WordPunctTokenizer
 from nltk.stem.wordnet import WordNetLemmatizer 
 from nltk.tag import pos_tag
+
 import CleaningFunctions as c
+import FilterFunctions as f
 
 def make_wordBank(listOfTexts):
     wordBank = []
     for text in listOfTexts:
-        clean = h.cleaner(text)
-        lemmatized = h.lemmatizer(clean)
-        noPropNouns = h.remove_Pnouns(lemmatized)
-        wordBank.extend(noPropNouns)
+        clean = cleaner(text)
+        print("text cleaned")
+        noExtraWords = f.unified_word_filter(clean)
+        print("removed useless words")
+        lemmatized = lemmatizer(noExtraWords)
+        print("lemmatized")
+        wordBank.extend(lemmatized)
     return wordBank
 
 
@@ -28,15 +33,6 @@ def lemmatizer (List):
         lemList.append(WordNetLemmatizer().lemmatize(word))
     return lemList
 
-def remove_Pnouns(List):
-    nounFree = []
-    for word in List:
-        lst = pos_tag(word)
-        tup = lst[0]
-        pos = tup[1]
-        if pos != 'NNP':
-            nounFree.append(word)
-    return nounFree
-            
+
 
 

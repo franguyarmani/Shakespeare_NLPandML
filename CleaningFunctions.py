@@ -8,7 +8,6 @@ def remove_directions_brackets(rawText): #Safe to use on all plays
         start = cleanString.find('[')
         end = cleanString.find(']')
         cleanString = splice(start, end, cleanString)
-        
     return cleanString
 
 def remove_directions_space(rawText): #tested for as you like it, Caesar, 
@@ -42,7 +41,7 @@ def remove_abrv_names(rawText): #Safe to run on Hamlet, King Lear, MacBeth, Much
 def remove_all_caps(dirtyList):
     cleanList = []
     for word in dirtyList:
-        if len(word) < 2 or not word.isupper():
+        if (len(word) < 2 or not word.isupper()):
             cleanList.append(word)
     return cleanList
 
@@ -60,8 +59,8 @@ def remove_punctandnums(dirtyList):
 
 
 #++++++++++Helper Funcitons++++++++++++
-def splice(index1, index2, string):
-    front = string[:index1-1]
-    back = string[index2+1:]
+def splice(index1, index2, String):
+    front = String[:(index1-1)]
+    back = String[(index2+1):]
     newString = front+back
     return newString
