@@ -10,5 +10,11 @@ def cleaner(rawText):
     tokenized = WordPunctTokenizer().tokenize(noNames)
     noCaps = c.remove_all_caps(tokenized)
     noPunct = c.remove_punctandnums(noCaps)
-    lemmatized = WordNetLemmatizer().lemmatize(noPunct)
-    return cleanList
+    lemmatized = lemmatizer(noPunct)
+    return lemmatized
+
+def lemmatizer (List):
+    LemList = []
+    for word in List:
+        LemList.append(WordNetLemmatizer().lemmatize(word))
+    return LemList
