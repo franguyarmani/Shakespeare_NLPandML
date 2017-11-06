@@ -1,26 +1,46 @@
 
 from nltk.corpus import PlaintextCorpusReader
 from nltk.tokenize import WordPunctTokenizer
+from nltk.stem.wordnet import WordNetLemmatizer as l
 import CleaningFunctions as c
+import HelperFunctions as h
 import re
 
-brackets = ["AsYouLikeIt.txt", "Hamlet.txt", "TamingOfTheShrew.txt", "TwelthNight.txt"]
-CapNames = ["AsYouLikeIt.txt", "TamingOfTheShrew.txt", "TwelthNight.txt"]
-SpacedDirections = []
-
-
+#=====================The Corpus======================
 
 corpus_root = "C:/Users/fbpea/Git_Repositories/Shakespeare_NLPandML/ShakespeareCorpus"
 plays = PlaintextCorpusReader(corpus_root, '.*.txt')
 
-asYouLikeItRaw = plays.raw('AsYouLikeIt.txt')
+#=====================Build Texts=====================
 
-asYouLikeItTokens = WordPunctTokenizer().tokenize(asYouLikeItRaw)
+AsYouLikeItRaw = plays.raw('AsYouLikeIt.txt')
+CaesarRaw = plays.raw('Caesar.txt')
+HamletRaw  =    plays.raw('Hamlet.txt')
+KingLearRaw =  plays.raw('KingLear.txt')
+MacbethRaw = plays.raw('Macbeth.txt')
+MuchAdoAboutNothingRaw = plays.raw('MuchAdoAboutNothing.txt')
+OthelloRaw = plays.raw('Othello.txt')
+TamingOfTheShrewRaw = plays.raw("TamingOfTheShrew.txt")
+TwelthNightRaw = plays.raw("TwelthNight.txt")
 
-def remove_directions_space(rawText):
-    #use a regular expresison to find space before and return after
+#==================Text Distictions===================
+
+capNames = [AsYouLikeItRaw, CaesarRaw,TamingOfTheShrewRaw, TwelthNightRaw]
+tragedies = [CaesarRaw, HamletRaw, KingLearRaw, MacbethRaw, OthelloRaw]
+Comedies = [AsYouLikeItRaw, MuchAdoAboutNothingRaw, TamingOfTheShrewRaw, TwelthNightRaw]
+
+clean = h.cleaner(KingLearRaw)
+print(h.remove_nouns(clean))
 
 
-print(c.remove_directions_brackets(asYouLikeItRaw)[:400])
-#AYLITokensNoNames = (c.remove_all_caps(asYouLikeItTokens))
-#print(c.remove_punctandnums(AYLITokensNoNames)[0:20])
+
+
+#raw clean
+
+#tokenize
+
+#list clean
+
+#lemmatize list
+
+#remove nouns

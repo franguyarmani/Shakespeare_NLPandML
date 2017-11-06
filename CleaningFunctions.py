@@ -49,7 +49,7 @@ def remove_all_caps(dirtyList):
 def remove_punctandnums(dirtyList):
     cleanList = []
     for word in dirtyList:
-        if word not in string.punctuation:
+        if word not in string.punctuation and not word.isdigit() :
             cleanList.append(word)
     return cleanList
 

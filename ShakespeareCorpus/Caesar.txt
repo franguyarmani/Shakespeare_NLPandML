@@ -778,7 +778,7 @@ Enter Brutus in his orchard.
   BRUTUS. He is welcome hither.
   CASSIUS. This, Decius Brutus.
   BRUTUS. He is welcome too.
-CASSIUS. This, Casca; this, Cinna; and this, Metellus Cimber.
+  CASSIUS. This, Casca; this, Cinna; and this, Metellus Cimber.
   BRUTUS. They are all welcome.
     What watchful cares do interpose themselves
     Betwixt your eyes and night?
@@ -1214,8 +1214,7 @@ come
     not near Casca; have an eye to Cinna; trust not Trebonius;
 mark
     well Metellus Cimber; Decius Brutus loves thee not; thou hast
-    wronged Caius Ligarius. There is but one mind in all these
-men,
+    wronged Caius Ligarius. There is but one mind in all these men,
     and it is bent against Caesar. If thou beest not immortal,
 look
     about you. Security gives way to conspiracy. The mighty gods
@@ -1293,17 +1292,6 @@ chance.
     And bring me word what he doth say to thee.
                                                Exeunt severally.
 
-
-
-
-<<THIS ELECTRONIC VERSION OF THE COMPLETE WORKS OF WILLIAM
-SHAKESPEARE IS COPYRIGHT 1990-1993 BY WORLD LIBRARY, INC., AND IS
-PROVIDED BY PROJECT GUTENBERG ETEXT OF CARNEGIE MELLON UNIVERSITY
-WITH PERMISSION.  ELECTRONIC AND MACHINE READABLE COPIES MAY BE
-DISTRIBUTED SO LONG AS SUCH COPIES (1) ARE FOR YOUR OR OTHERS
-PERSONAL USE ONLY, AND (2) ARE NOT DISTRIBUTED OR USED
-COMMERCIALLY.  PROHIBITED COMMERCIAL DISTRIBUTION INCLUDES BY ANY
-SERVICE THAT CHARGES FOR DOWNLOAD TIME OR FOR MEMBERSHIP.>>
 
 
 
@@ -1676,14 +1664,10 @@ Enter Brutus and Cassius, and a throng of Citizens.
   THIRD CITIZEN. The noble Brutus is ascended. Silence!
   BRUTUS. Be patient till the last.
     Romans, countrymen, and lovers! Hear me for my cause, and be
-    silent, that you may hear. Believe me for mine honor, and
-have
-    respect to mine honor, that you may believe. Censure me in
-your
-    wisdom, and awake your senses, that you may the better judge.
-If
-    there be any in this assembly, any dear friend of Caesar's,
-to
+    silent, that you may hear. Believe me for mine honor, and have
+    respect to mine honor, that you may believe. Censure me in your
+    wisdom, and awake your senses, that you may the better judge. If
+    there be any in this assembly, any dear friend of Caesar's, to
     him I say that Brutus' love to Caesar was no less than his.
 If
     then that friend demand why Brutus rose against Caesar, this
@@ -2025,19 +2009,6 @@ firebrands. To
     Brutus', to Cassius'; burn all. Some to Decius' house, and
 some
     to Casca's, some to Ligarius'. Away, go!             Exeunt.
-
-
-
-
-<<THIS ELECTRONIC VERSION OF THE COMPLETE WORKS OF WILLIAM
-SHAKESPEARE IS COPYRIGHT 1990-1993 BY WORLD LIBRARY, INC., AND IS
-PROVIDED BY PROJECT GUTENBERG ETEXT OF CARNEGIE MELLON UNIVERSITY
-WITH PERMISSION.  ELECTRONIC AND MACHINE READABLE COPIES MAY BE
-DISTRIBUTED SO LONG AS SUCH COPIES (1) ARE FOR YOUR OR OTHERS
-PERSONAL USE ONLY, AND (2) ARE NOT DISTRIBUTED OR USED
-COMMERCIALLY.  PROHIBITED COMMERCIAL DISTRIBUTION INCLUDES BY ANY
-SERVICE THAT CHARGES FOR DOWNLOAD TIME OR FOR MEMBERSHIP.>>
-
 
 
 ACT IV. SCENE I.
