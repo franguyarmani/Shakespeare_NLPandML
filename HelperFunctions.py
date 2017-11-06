@@ -3,6 +3,15 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tag import pos_tag
 import CleaningFunctions as c
 
+def make_wordBank(listOfTexts):
+    wordBank = []
+    for text in listOfTexts:
+        clean = h.cleaner(text)
+        lemmatized = h.lemmatizer(clean)
+        noPropNouns = h.remove_Pnouns(lemmatized)
+        wordBank.extend(noPropNouns)
+    return wordBank
+
 
 def cleaner(rawText):
     noBrackets = c.remove_directions_brackets(rawText)
@@ -10,17 +19,16 @@ def cleaner(rawText):
     noNames = c.remove_abrv_names(noDirections)
     tokenized = WordPunctTokenizer().tokenize(noNames)
     noCaps = c.remove_all_caps(tokenized)
-    noPunct = c.remove_punctandnums(noCaps)
-    lemmatized = lemmatizer(noPunct)
-    return lemmatized
+    cleanList = c.remove_punctandnums(noCaps)
+    return cleanList
 
 def lemmatizer (List):
-    LemList = []
+    lemList = []
     for word in List:
-        LemList.append(WordNetLemmatizer().lemmatize(word))
-    return LemList
+        lemList.append(WordNetLemmatizer().lemmatize(word))
+    return lemList
 
-def remove_nouns(List):
+def remove_Pnouns(List):
     nounFree = []
     for word in List:
         lst = pos_tag(word)
