@@ -1,9 +1,19 @@
 from nltk.corpus import PlaintextCorpusReader
-import nltk
+from nltk.tokenize import word_tokenize
 from nltk.tag import pos_tag
+import nltk
+
+from nltk import Tree
+from nltk.draw.util import CanvasFrame
+from nltk.draw import TreeWidget
+from nltk.draw.tree import TreeView
+
+import os
+
 
 import re
 import string
+
 
 
 #===================The Corpi======================
@@ -38,16 +48,38 @@ speechSents = len(re.split('[.,?,:]', speech))
 
 #=================Chunk Sentences==================
 trees = []
-grammar = "NP: {<DT>?<JJ>*<NN>}"
-sentences = re.split('[.,?,:]', soliloquy)
+grammar = """ 
+    S: {<NP><VP>} 
+    NP: {<DT>?<JJ>*<NN>}
+        {<DT>?<JJ>*<PRP>}
+        {<DT>?<JJ>*<NNP>}
+        {<DT>?<JJ>*<NNS>}
+    PP: {<P><NP>}
+    VP: {<VB><NP>|<VP><PP>}
+    IF: {<TO><VB>}
+"""
+sentences = re.split('[.?:]', speech)
 
-for s in sentences[0:3]:
-    noPunct =  s.translate(str.maketrans({}.fromkeys(string.punctuation)))
-    print(noPunct)
-    tagged = pos_tag(noPunct)
+
+first3 = sentences[0:3]
+#print (first3)
+
+
+for s in first3:
+    noPunct = s.translate(str.maketrans({}.fromkeys(string.punctuation)))
+    #print(noPunct)
+    s = "The little yellow dog ran across the street"
+    text = word_tokenize(noPunct)
+    tagged = pos_tag(text)
     cp = nltk.RegexpParser(grammar)
     result = cp.parse(tagged)
-    print (result)
+    TreeView(result)
+
+    
+
+
+
+
 
 
 
