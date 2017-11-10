@@ -68,14 +68,14 @@ for sentence in sentences:
     for w1, w2 in bigrams(lst):
         model[w1][w2] += 1
  
-print (model["sorry"]["for"])
+
 for w1 in model:
     total_count = float(sum(model[w1].values()))
     for w2 in model[w1]:
         model[w1][w2] /= total_count
 
+print (model["sorry"]["for"])
 
- 
 text = [None]
  
 sentence_finished = False
