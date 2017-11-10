@@ -50,16 +50,13 @@ for file_id in plays.fileids():
 # f.close()
 
 
-print('cleaned')
+
 #=================Tokenize===================
 f = open("DeepClean.txt", 'r')
 cleanText = f.read()
 tempList = cleanText.split()
 cleanText = " ".join(tempList)
 sentences = nltk.sent_tokenize(cleanText)
-
-
-print ('tokenized')
 
 #==============Generate Model===============
 model = defaultdict(lambda: defaultdict(lambda: 0))
@@ -74,26 +71,27 @@ for w1 in model:
     for w2 in model[w1]:
         model[w1][w2] /= total_count
 
-print (model[None]["The"])
 
-#==============Gen Text=============
+#==============Generag Text=============
 
-text = [None]
+
+
+iter = 0 
+while iter <= 10:
+    text = [None]
+    sentence_finished = False
+    while not sentence_finished:
+        r = random.random()
+        accumulator = .0
  
-sentence_finished = False
+        for word in model[text[-1]].keys():
+            accumulator += model[text[-1]][word]
  
-while not sentence_finished:
-    r = random.random()
-    accumulator = .0
+            if accumulator >= r:
+                text.append(word)
+                break
  
-    for word in model[text[-1]].keys():
-        accumulator += model[text[-1]][word]
- 
-        if accumulator >= r:
-            text.append(word)
-            break
- 
-    if text[-1:] == [None]:
-        sentence_finished = True
- 
-print (' '.join([t for t in text if t]))
+        if text[-1:] == [None]:
+            sentence_finished = True
+    print (' '.join([t for t in text if t]))
+    iter += 1

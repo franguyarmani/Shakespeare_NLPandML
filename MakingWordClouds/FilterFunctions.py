@@ -1,6 +1,6 @@
 from nltk.corpus import stopwords
 from nltk.tag import pos_tag
-import Q1 as s
+
 
 
 def remove_stopwords(List):
@@ -28,7 +28,7 @@ def unified_word_filter(List): #combination of remove_Pnouns and remove stop_wor
         lst = pos_tag(word)
         tup = lst[0]
         pos = tup[1]
-        if pos != 'NNP' and word not in stopwords.words('english') and word not in s.Undesirable :
+        if pos != 'NNP' and word not in stopwords.words('english') and word not in m.Undesirable :
             noExtra.append(word)
     return noExtra
             
