@@ -65,7 +65,7 @@ print ('tokenized')
 model = defaultdict(lambda: defaultdict(lambda: 0))
 for sentence in sentences:
     lst = sentence.split()
-    for w1, w2 in bigrams(lst):
+    for w1, w2 in bigrams(lst, pad_right=True, pad_left=True):
         model[w1][w2] += 1
  
 
@@ -74,7 +74,9 @@ for w1 in model:
     for w2 in model[w1]:
         model[w1][w2] /= total_count
 
-print (model["sorry"]["for"])
+print (model[None]["The"])
+
+#==============Gen Text=============
 
 text = [None]
  
@@ -84,8 +86,8 @@ while not sentence_finished:
     r = random.random()
     accumulator = .0
  
-    for word in model[tuple(text[-1:])].keys():
-        accumulator += model[tuple(text[-1:])][word]
+    for word in model[text[-1]].keys():
+        accumulator += model[text[-1]][word]
  
         if accumulator >= r:
             text.append(word)
