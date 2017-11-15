@@ -58,25 +58,36 @@ grammar = """
     VP: {<VB><NP>|<VP><PP>}
     IF: {<TO><VB>}
 """
-sentences = re.split('[.?:]', speech)
+HPsentences = re.split('[.?:]', speech)
+WSsentences = re.split('[.?:]', soliloquy)
+
+print("'To be, or not to be' contains "+str(len(WSsentences))+" sentences")
+print("'Dumbledore's Speech' contains "+str(len(HPsentences))+" sentences")
+
+HPfirst3 = HPsentences[0:3]
+WSfirst3 = WSsentences[0:3]
 
 
-first3 = sentences[0:3]
-#print (first3)
 
-
-for s in first3:
+for s in HPfirst3:
     noPunct = s.translate(str.maketrans({}.fromkeys(string.punctuation)))
-    #print(noPunct)
+
     s = "The little yellow dog ran across the street"
     text = word_tokenize(noPunct)
     tagged = pos_tag(text)
     cp = nltk.RegexpParser(grammar)
     result = cp.parse(tagged)
     TreeView(result)
-
     
+for s in WSfirst3:
+    noPunct = s.translate(str.maketrans({}.fromkeys(string.punctuation)))
 
+    s = "The little yellow dog ran across the street"
+    text = word_tokenize(noPunct)
+    tagged = pos_tag(text)
+    cp = nltk.RegexpParser(grammar)
+    result = cp.parse(tagged)
+    TreeView(result)
 
 
 

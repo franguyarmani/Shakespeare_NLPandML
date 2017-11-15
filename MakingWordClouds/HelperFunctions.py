@@ -5,7 +5,7 @@ from nltk.tag import pos_tag
 
 import CleaningFunctions as c
 import FilterFunctions as f
-import main as m
+import MakeCloud as m
 
 def make_wordBank(listOfTexts):
     wordBank = []

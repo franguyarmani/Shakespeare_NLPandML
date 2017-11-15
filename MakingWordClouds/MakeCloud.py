@@ -57,21 +57,3 @@ def comedies_wordcloud():
 tragedies_wordcloud()
 comedies_wordcloud()
 
-
-
-    
-    
-
-
-
-
-
-
-
-#raw clean
-
-#tokenize
-#list clean
-#lemmatize list
-#remove nouns
-#append text
