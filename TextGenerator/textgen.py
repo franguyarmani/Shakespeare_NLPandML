@@ -72,7 +72,7 @@ for w1 in model:
         model[w1][w2] /= total_count
 
 
-#==============Generag Text=============
+#==============Generate Text==============
 
 
 
