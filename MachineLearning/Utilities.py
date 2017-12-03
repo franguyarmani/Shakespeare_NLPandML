@@ -1,3 +1,4 @@
+import os
 
 def build_vector(textList, vocabulary):
     d = dict.fromkeys(vocabulary, 0)
@@ -13,7 +14,7 @@ def prepare_text(name):
 
 def build_vocabulary(Path):
     d = {}
-    for filename in os.listdir(scenesPath):
-        for w in u.prepare_text(filename):
+    for filename in os.listdir(Path):
+        for w in prepare_text(filename):
             d[w] = 1
     return d
