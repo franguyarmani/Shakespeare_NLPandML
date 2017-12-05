@@ -18,3 +18,12 @@ def build_vocabulary(Path):
         for w in prepare_text(filename):
             d[w] = 1
     return d
+
+def build_occurences(vocabulary, Path):
+    d = dict.fromkeys(vocabulary, 0)
+    for filename in os.listdir(Path):
+        text = prepare_text(filename)
+        for w in vocabulary:
+            if (w in text):
+                d[w] += 1
+    return d    
