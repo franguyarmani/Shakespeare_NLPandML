@@ -1,6 +1,6 @@
 import math
 import os
-import string
+import collections
 
 import Utilities as u
 
@@ -33,7 +33,6 @@ occurences = build_occurences(vocab, scenesPath)
 nDocs = len(os.listdir(scenesPath))
 weights = build_weights(vocab, occurences)
 
-
 arff.write("@RELATION scenes\n")
 for word in vocab:
     arff.write("@Attribute " + word + " REAL\n")
@@ -46,7 +45,6 @@ for filename in os.listdir(scenesPath):
     if(filename[0] == "t"):
         for word in vocab:
             arff.write(str(vector[word]*weights[word])+",")
-
         arff.write("Tragedy\n")
     else:
         for word in vocab:
