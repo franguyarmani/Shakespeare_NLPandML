@@ -27,3 +27,9 @@ def build_occurences(vocabulary, Path):
             if (w in text):
                 d[w] += 1
     return d    
+
+def build_scores(ocr, wghts):
+    d = ocr
+    for key in list(d.keys()):
+        d[key] *= wghts[key]
+    return d   
